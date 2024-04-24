@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="src/output.css" rel="stylesheet">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/0cc563fb18.js" crossorigin="anonymous"></script>
+  <title>Real Estate One</title>
+</head>
+<body class="bg-[#F1F4F5]">
+  <!-- header start -->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <!-- logo -->
+        <div class="px-4 w-1/2 lg:w-1/3">
+          <a href="#home" class="py-6 block">
+            <img src="src/img/logo/logo.png" alt="logo" class="w-10">
+          </a>
+        </div>
+        <div class="flex items-center px-4 w-1/2 lg:w-3/4">
+          <!-- menu hamburger -->
+          <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+            <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+          </button>
+          <!-- menu navigasi -->
+          <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <ul class="lg:flex">
+              <li><a href="#home" class="flex font-medium text-base text-dark py-1 my-3 mx-8 lg:mx-4 hover:text-biru alink relative active">Home</a></li>
+              <li><a href="#about" class="flex font-medium text-base text-dark py-1 my-3 mx-8 lg:mx-4 hover:text-biru alink relative">About</a></li>
+              <li><a href="#properties" class="flex font-medium text-base text-dark py-1 my-3 mx-8 lg:mx-4 hover:text-biru alink relative">Properties</a></li>
+              <li><a href="#agents" class="flex font-medium text-base text-dark py-1 my-3 mx-8 lg:mx-4 hover:text-biru alink relative">Agents</a></li>
+              <li><a href="#categories" class="flex font-medium text-base text-dark py-1 my-3 mx-8 lg:mx-4 hover:text-biru alink relative">Categories</a></li>
+              <div class="flex items-center mx-8 lg:mx-0 w-full lg:justify-end gap-2">
+                <a href="#" class="font-semibold text-sm xl:text-base text-biru border border-biru hover:bg-langit transition duration-300 ease-in-out py-2 px-4 xl:py-[10px] xl:px-[30px] rounded-lg">Sign In</a>
+                <a href="#" class="font-semibold text-sm xl:text-base bg-biru text-white hover:bg-[#0595f5] transition duration-300 ease-in-out py-2 px-4 xl:py-[10px] xl:px-[30px] rounded-lg">Sign Up</a>
+              </div>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+
+  <!-- main start -->
+  <main>
+    <!-- home start -->
+    <section id="home" class="home pt-44 lg:pt-36">
+      <div class="container px-8">
+        <div class="flex flex-wrap relative bg-langit rounded-3xl">
+          <!-- left side -->
+          <div class="w-full px-4 pt-16 sm:pt-32 md:pt-52 xl:px-14 lg:pt-14 pb-44 lg:w-1/2 order-last lg:order-first">
+            <p class="text-sm xl:text-lg font-semibold text-biru bg-white rounded-md py-2 px-3 xl:py-3 xl:px-7 w-fit">Real Estate</p>
+            <h1 class="font-semibold text-3xl md:text-5xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight mt-5">Greatest Way To Find <br>Your <span class="text-biru">Future Property</span></h1>
+            <p class="text-secondary mt-[10px]">We are a real estate agency that will helping you to get your perfect properties with the easy and fastest way.</p>
+            <!-- tabs -->
+            <div class="tabs-button mt-14 bg-white w-fit px-5 flex gap-5 rounded-t-xl">
+              <button class="tab-button py-3 tablink relative active" onclick="tabsMenu(event, 'buy');">Buy</button>
+              <button class="tab-button py-3 tablink relative" onclick="tabsMenu(event, 'sell');">Sell</button>
+              <button class="tab-button py-3 tablink relative" onclick="tabsMenu(event, 'rent');">Rent</button>
+            </div>
+            <!-- tab|buy -->
+            <div id="buy" class="tabs-menu flex flex-col lg:flex-row items-center gap-10 lg:gap-16 bg-white p-7 rounded-r-xl rounded-bl-xl relative lg:absolute z-[1] shadow-xl mt-[1.5px] pr-7">
+              <div id="location" class="border-b-2 lg:border-b-0 lg:border-r-2 lg:border-neutral-300 w-full lg:w-fit">
+                <span class="text-secondary"><i class="fa-solid fa-location-dot pr-2"></i>Location</span>
+                <p class="mr-14 mt-3">Jakarta, Indonesia<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="property-type" class="border-b-2 lg:border-b-0 lg:border-r-2 lg:border-neutral-300 w-full lg:w-fit">
+                <span class="text-secondary"><i class="fa-solid fa-house pr-2"></i></i>Property Type</span>
+                <p class="mr-14 mt-3">Apartment House<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="price-range" class="w-full lg:w-fit border-b-2 lg:border-b-0">
+                <span class="text-secondary"><i class="fa-solid fa-tag pr-2"></i></i>Price Range</span>
+                <p class="mr-14 mt-3">$5000-$9000<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="button-search" class="bg-slate-400 w-full lg:w-fit rounded-xl">
+                <span class="bg-biru hover:bg-[#0595f5] inline-block rounded-md w-full p-4 lg:inline lg:p-4 text-white cursor-pointer"><i class="fa-solid fa-magnifying-glass fa-lg mr-2 lg:mr-0"></i><span class="lg:hidden">Cari</span></span>
+              </div>
+            </div>
+            <!-- tab|sell -->
+            <div id="sell" class="tabs-menu hidden flex-col lg:flex-row items-center gap-10 lg:gap-16 bg-white p-7 rounded-r-xl rounded-bl-xl relative lg:absolute z-[1] shadow-xl mt-[1.5px] pr-7">
+              <div id="location" class="border-b-2 lg:border-b-0 lg:border-r-2 lg:border-neutral-300 w-full lg:w-fit">
+                <span class="text-secondary"><i class="fa-solid fa-location-dot pr-2"></i>Location</span>
+                <p class="mr-14 mt-3">Bandung, Indonesia<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="property-type" class="border-b-2 lg:border-b-0 lg:border-r-2 lg:border-neutral-300 w-full lg:w-fit">
+                <span class="text-secondary"><i class="fa-solid fa-house pr-2"></i></i>Property Type</span>
+                <p class="mr-14 mt-3">Apartment House<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="price-range" class="w-full lg:w-fit border-b-2 lg:border-b-0">
+                <span class="text-secondary"><i class="fa-solid fa-tag pr-2"></i></i>Price Range</span>
+                <p class="mr-14 mt-3">$5000-$9000<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="button-search" class="bg-slate-400 w-full lg:w-fit rounded-xl">
+                <span class="bg-biru inline-block rounded-md w-full p-4 lg:inline lg:p-4 text-white cursor-pointer"><i class="fa-solid fa-magnifying-glass fa-lg mr-2 lg:mr-0"></i><span class="lg:hidden">Cari</span></span>
+              </div>
+            </div>
+            <!-- tab|rent -->
+            <div id="rent" class="tabs-menu hidden flex-col lg:flex-row items-center gap-10 lg:gap-16 bg-white p-7 rounded-r-xl rounded-bl-xl relative lg:absolute z-[1] shadow-xl mt-[1.5px] pr-7">
+              <div id="location" class="border-b-2 lg:border-b-0 lg:border-r-2 lg:border-neutral-300 w-full lg:w-fit">
+                <span class="text-secondary"><i class="fa-solid fa-location-dot pr-2"></i>Location</span>
+                <p class="mr-14 mt-3">Surabaya, Indonesia<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="property-type" class="border-b-2 lg:border-b-0 lg:border-r-2 lg:border-neutral-300 w-full lg:w-fit">
+                <span class="text-secondary"><i class="fa-solid fa-house pr-2"></i></i>Property Type</span>
+                <p class="mr-14 mt-3">Apartment House<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="price-range" class="w-full lg:w-fit border-b-2 lg:border-b-0">
+                <span class="text-secondary"><i class="fa-solid fa-tag pr-2"></i></i>Price Range</span>
+                <p class="mr-14 mt-3">$5000-$9000<i class="fa-solid fa-chevron-down ml-2 text-biru"></i></p>
+              </div>
+              <div id="button-search" class="bg-slate-400 w-full lg:w-fit rounded-xl">
+                <span class="bg-biru inline-block rounded-md w-full p-4 lg:inline lg:p-4 text-white cursor-pointer"><i class="fa-solid fa-magnifying-glass fa-lg mr-2 lg:mr-0"></i><span class="lg:hidden">Cari</span></span>
+              </div>
+            </div>
+          </div>
+          <!-- right side -->
+          <div class="w-full px-4 pt-16 xl:px-14 lg:pt-14 pb-44 lg:w-1/2 order-first lg:order-last">
+            <div class="absolute lg:right-12 bg-white p-5 max-w-[250px] -top-14 sm:max-w-[300px] md:max-w-[350px] lg:max-w-[450px] lg:top-auto rounded-2xl shadow-inner lg:shadow-xl">
+              <img src="src/img/hero_img/omar-flores-oAvD_1dPvGo-unsplash.jpg" alt="hero image" class=" pointer-events-none rounded-2xl max-w-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- home end -->
+
+    <!-- companies start -->
+    <section class="pt-52">
+      <div class="container">
+        <div class="w-full px-4">
+          <h3 class="font-semibold text-xl text-center text-secondary">Trusted by 15,000+ companies</h3>
+          <div class="flex flex-wrap items-center justify-center">
+            <a href="#" class="my-4 py-4 px-2 lg:mx-6 xl:mx-10 max-w-24"><img src="src/img/logo/logo-mastercard.png" alt="logo-1"></a>
+            <a href="#" class="my-4 py-4 px-2 lg:mx-6 xl:mx-10 max-w-28"><img src="src/img/logo/Uber_logo.png" alt="logo-2"></a>
+            <a href="#" class="my-4 py-4 px-2 lg:mx-6 xl:mx-10 max-w-28"><img src="src/img/logo/visa-logo.png" alt="logo-3"></a>
+            <a href="#" class="my-4 py-4 px-2 lg:mx-6 xl:mx-10 max-w-44"><img src="src/img/logo/Logitech_Logo.png" alt="logo-4"></a>
+            <a href="#" class="my-4 py-4 px-2 lg:mx-6 xl:mx-10 max-w-48"><img src="src/img/logo/PayPal-Logo.png" alt="logo-5"></a>
+          </div>
+        </div>  
+      </div>
+    </section>
+    <!-- companies end -->
+
+    <!-- about start -->
+    <section id="about" class="about pt-40">
+      <div class="container">
+        <!-- title -->
+        <div class="judul-section horizontal-line">
+          <h2 class="text-biru text-xl font-semibold">About Us</h2>
+        </div>
+        <div class="flex flex-wrap mt-10">
+          <!-- side left -->
+          <div class="w-full px-4 lg:w-1/2">
+            <div class="mt-10 lg:mt-0">
+              <img src="src/img/hero_img/frame_about.png" alt="frame about" class="max-w-full mx-auto pointer-events-none">
+            </div>
+          </div>
+          <!-- side right -->
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h2 class="font-semibold text-3xl md:text-4xl lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight">We Are The Most Trusted And<br>Dedicated Real Estate Agent</h2>
+            <p class="text-secondary mt-[10px]">We are a experienced and trusted real estate agency.<br>We working with full of dedication over the years.</p>
+            <!-- list -->
+            <div class="w-full mt-5 lg:mt-10">
+              <div class="flex items-center mb-3">
+                <div class="p-3 bg-langit rounded-full">
+                  <img src="src/img/icon/check-3278.png" alt="check" class="max-w-5">
+                </div>
+                <p class="font-medium text-base text-secondary pl-4">15k partners have worked with us</p>
+              </div>
+              <div class="flex items-center mb-3">
+                <div class="p-3 bg-langit rounded-full">
+                  <img src="src/img/icon/check-3278.png" alt="check" class="max-w-5">
+                </div>
+                <p class="font-medium text-base text-secondary pl-4">We have professional and experienced personal</p>
+              </div>
+              <div class="flex items-center mb-3">
+                <div class="p-3 bg-langit rounded-full">
+                  <img src="src/img/icon/check-3278.png" alt="check" class="max-w-5">
+                </div>
+                <p class="font-medium text-base text-secondary pl-4">We provide the service easy and fastest way</p>
+              </div>
+            </div>
+            <!-- button -->
+            <div class="tombol flex items-center gap-2 mt-5 lg:mt-10">
+              <a href="#" class="font-semibold text-sm md:text-[18px] text-white bg-biru py-2 px-5 lg:py-4 lg:px-10 rounded-lg shadow-lg md:shadow-xl hover:bg-[#0595f5] hover:shadow-sm ease-in-out duration-300 active:bg-opacity-50">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about end -->
+
+    <!-- product start -->
+    <section id="properties" class="product pt-40">
+      <div class="container">
+        <!-- title product -->
+        <div class="judul-section px-4">
+          <h2 class="text-dark text-4xl font-semibold">Popular Now <span class="absolute inline-block p-2 bg-biru text-white text-[10px] leading-3 rounded-full ml-1">3 New</span></h2>
+        </div>
+
+        <!-- list product -->
+        <div class="w-full px-4 flex md:justify-evenly xl:justify-center 2xl:justify-between gap-3 md:gap-6 lg:gap-9 flex-wrap xl:mx-auto mt-16">
+          <div class="mb-1 xl:mb-0 p-4 md:max-w-[320px] lg:max-w-[370px] 2xl:max-w-[390px] bg-white">
+            <div class="rounded-xl shadow-md overflow-hidden relative">
+              <span class="absolute inline-block p-2 bg-white text-biru text-base font-semibold rounded-lg right-0 -translate-x-3 translate-y-3">IDR 770 Juta</span>
+              <img src="src/img/product_img/rumah1.jpg" alt="rumah1">
+            </div>
+            <h4 class="font-semibold text-xl text-dark mt-5 mb-1 light-satu">Rumah Satu</h4>
+            <p class="font-medium text-base text-secondary light-dua">Non delectus. Aliquid, blanditiis.</p>
+            <div class="flex gap-10 items-center mt-3">
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/full-screen.png" alt="expand area" class="max-w-5 inline-block mr-2">Area: 576m&sup2;</span>
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/bedroom.png" alt="expand area" class="max-w-[1.85rem] inline-block mr-2">Bedroom: 5</span>
+            </div>
+            <div class="flex justify-center mt-8 mb-3">
+              <a href="#" class="font-semibold text-biru border border-biru hover:bg-biru hover:text-white transition duration-300 ease-in-out px-4 py-1 rounded-md">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="mb-1 xl:mb-0 p-4 md:max-w-[320px] lg:max-w-[370px] 2xl:max-w-[390px] bg-white">
+            <div class="rounded-xl shadow-md overflow-hidden relative">
+              <span class="absolute inline-block p-2 bg-white text-biru text-base font-semibold rounded-lg right-0 -translate-x-3 translate-y-3">IDR 850 Juta</span>
+              <img src="src/img/product_img/rumah2.jpg" alt="rumah2">
+            </div>
+            <h4 class="font-semibold text-xl text-dark mt-5 mb-1 light-satu">Rumah Dua</h4>
+            <p class="font-medium text-base text-secondary light-dua">Non delectus. Aliquid, blanditiis.</p>
+            <div class="flex gap-10 items-center mt-3">
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/full-screen.png" alt="expand area" class="max-w-5 inline-block mr-2">Area: 576m&sup2;</span>
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/bedroom.png" alt="expand area" class="max-w-[1.85rem] inline-block mr-2">Bedroom: 5</span>
+            </div>
+            <div class="flex justify-center mt-8 mb-3">
+              <a href="#" class="font-semibold text-biru border border-biru hover:bg-biru hover:text-white transition duration-300 ease-in-out px-4 py-1 rounded-md">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="mb-1 xl:mb-0 p-4 md:max-w-[320px] lg:max-w-[370px] 2xl:max-w-[390px] bg-white">
+            <div class="rounded-xl shadow-md overflow-hidden relative">
+              <span class="absolute inline-block p-2 bg-white text-biru text-base font-semibold rounded-lg right-0 -translate-x-3 translate-y-3">IDR 580 Juta</span>
+              <img src="src/img/product_img/rumah3.jpg" alt="rumah3">
+            </div>
+            <h4 class="font-semibold text-xl text-dark mt-5 mb-1 light-satu">Rumah Tiga</h4>
+            <p class="font-medium text-base text-secondary light-dua">Non delectus. Aliquid, blanditiis.</p>
+            <div class="flex gap-10 items-center mt-3">
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/full-screen.png" alt="expand area" class="max-w-5 inline-block mr-2">Area: 576m&sup2;</span>
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/bedroom.png" alt="expand area" class="max-w-[1.85rem] inline-block mr-2">Bedroom: 5</span>
+            </div>
+            <div class="flex justify-center mt-8 mb-3">
+              <a href="#" class="font-semibold text-biru border border-biru hover:bg-biru hover:text-white transition duration-300 ease-in-out px-4 py-1 rounded-md">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="mb-1 xl:mb-0 p-4 md:max-w-[320px] lg:max-w-[370px] 2xl:max-w-[390px] bg-white">
+            <div class="rounded-xl shadow-md overflow-hidden relative">
+              <span class="absolute inline-block p-2 bg-white text-biru text-base font-semibold rounded-lg right-0 -translate-x-3 translate-y-3">IDR 350 Juta</span>
+              <img src="src/img/product_img/rumah4.jpg" alt="rumah4">
+            </div>
+            <h4 class="font-semibold text-xl text-dark mt-5 mb-1 light-satu">Rumah Empat</h4>
+            <p class="font-medium text-base text-secondary light-dua">Non delectus. Aliquid, blanditiis.</p>
+            <div class="flex gap-10 items-center mt-3">
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/full-screen.png" alt="expand area" class="max-w-5 inline-block mr-2">Area: 576m&sup2;</span>
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/bedroom.png" alt="expand area" class="max-w-[1.85rem] inline-block mr-2">Bedroom: 5</span>
+            </div>
+            <div class="flex justify-center mt-8 mb-3">
+              <a href="#" class="font-semibold text-biru border border-biru hover:bg-biru hover:text-white transition duration-300 ease-in-out px-4 py-1 rounded-md">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="mb-1 xl:mb-0 p-4 md:max-w-[320px] lg:max-w-[370px] 2xl:max-w-[390px] bg-white">
+            <div class="rounded-xl shadow-md overflow-hidden relative">
+              <span class="absolute inline-block p-2 bg-white text-biru text-base font-semibold rounded-lg right-0 -translate-x-3 translate-y-3">IDR 690 Juta</span>
+              <img src="src/img/product_img/rumah5.jpg" alt="rumah4">
+            </div>
+            <h4 class="font-semibold text-xl text-dark mt-5 mb-1 light-satu">Rumah Empat</h4>
+            <p class="font-medium text-base text-secondary light-dua">Non delectus. Aliquid, blanditiis.</p>
+            <div class="flex gap-10 items-center mt-3">
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/full-screen.png" alt="expand area" class="max-w-5 inline-block mr-2">Area: 576m&sup2;</span>
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/bedroom.png" alt="expand area" class="max-w-[1.85rem] inline-block mr-2">Bedroom: 5</span>
+            </div>
+            <div class="flex justify-center mt-8 mb-3">
+              <a href="#" class="font-semibold text-biru border border-biru hover:bg-biru hover:text-white transition duration-300 ease-in-out px-4 py-1 rounded-md">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="mb-1 xl:mb-0 p-4 md:max-w-[320px] lg:max-w-[370px] 2xl:max-w-[390px] bg-white">
+            <div class="rounded-xl shadow-md overflow-hidden relative">
+              <span class="absolute inline-block p-2 bg-white text-biru text-base font-semibold rounded-lg right-0 -translate-x-3 translate-y-3">IDR 960 Juta</span>
+              <img src="src/img/product_img/rumah6.jpg" alt="rumah4">
+            </div>
+            <h4 class="font-semibold text-xl text-dark mt-5 mb-1 light-satu">Rumah Empat</h4>
+            <p class="font-medium text-base text-secondary light-dua">Non delectus. Aliquid, blanditiis.</p>
+            <div class="flex gap-10 items-center mt-3">
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/full-screen.png" alt="expand area" class="max-w-5 inline-block mr-2">Area: 576m&sup2;</span>
+              <span class="text-dark text-base flex items-center"><img src="src/img/icon/bedroom.png" alt="expand area" class="max-w-[1.85rem] inline-block mr-2">Bedroom: 5</span>
+            </div>
+            <div class="flex justify-center mt-8 mb-3">
+              <a href="#" class="font-semibold text-biru border border-biru hover:bg-biru hover:text-white transition duration-300 ease-in-out px-4 py-1 rounded-md">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center py-7">
+          <a href="#" class="font-semibold text-base text-biru">Explore More <i class="fa-solid fa-circle-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- product end -->
+
+    <!-- Join with us start -->
+    <section id="join" class="join pt-40">
+      <div class="container">
+        <!-- title -->
+        <div class="judul-section horizontal-line">
+          <h2 class="text-biru text-xl font-semibold">Join With Us</h2>
+        </div>
+        <div class="flex flex-wrap mt-10">
+          <!-- side left -->
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h2 class="font-semibold text-3xl md:text-4xl lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight">Download The App And<br>Find Your Dream Home!</h2>
+            <p class="text-secondary mt-[10px]">Mpropert is a property apps which is available<br>In the app store and play store</p>
+            <!-- button -->
+            <div class="tombol flex items-center gap-2 mt-5 lg:mt-10">
+              <a href="#" class="p-1 rounded-lg border-2 shadow-lg md:shadow-xl hover:shadow-sm ease-in-out duration-300 active:opacity-50"><img src="src/img/icon/googlePlay.png" alt="play store" class="max-w-32 sm:max-w-44 rounded-lg"></a>
+              <a href="#" class="p-1 rounded-lg border-2 shadow-lg md:shadow-xl hover:shadow-sm ease-in-out duration-300 active:opacity-50"><img src="src/img/icon/appStore.png" alt="app store" class="max-w-32 sm:max-w-44 rounded-lg"></a>
+            </div>
+          </div>
+          <!-- side right -->
+          <div class="w-full px-4 lg:w-1/2">
+            <div class="mt-10 lg:mt-0">
+              <img src="src/img/hero_img/frame_join_with_us.png" alt="frame join with us" class="max-w-full mx-auto pointer-events-none">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Join with us end -->
+
+    <!-- customer testimonial start -->
+    <section id="customer" class="customer pt-40 pb-14">
+      <div class="container">
+        <!-- title -->
+        <div class="judul-section horizontal-line">
+          <h2 class="text-biru text-xl font-semibold">Join With Us</h2>
+        </div>
+        <!-- circle client title -->
+        <div class="judul-section px-4 mx-auto text-center mt-10">
+          <i class="fa-solid fa-quote-left fa-2xl lg:fa-4x text-biru"></i>
+          <h2 class="text-dark text-4xl font-semibold leading-tight mt-3">What Our Clients Say<br>About Our Service</h2>
+        </div>
+        <!-- client -->
+        <div class="flex px-4 mt-7">
+          <div class="hidden lg:grid justify-items-stretch lg:w-[15%]">
+            <div class="w-fit justify-self-end">
+              <img src="src/img/client_img/ian-dooley-d1UPkiFd04A-unsplash.jpg" alt="small img" class="max-w-20 rounded-full">
+            </div>
+            <div class="flex w-fit">
+              <img src="src/img/client_img/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="small img" class="max-w-24 rounded-full self-center">
+            </div>
+            <div class="flex w-fit justify-self-end">
+              <img src="src/img/client_img/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg" alt="small img" class="max-w-20 rounded-full self-end">
+            </div>
+          </div>
+
+          <div class="ulasan-client w-full lg:w-[70%]">
+            <!-- profile -->
+            <div class="flex items-center">
+              <div class="mx-auto lg:hidden">
+                <img src="src/img/client_img/ian-dooley-d1UPkiFd04A-unsplash.jpg" alt="small img" class="max-w-20 rounded-full">
+              </div>
+              <div class="w-fit mx-auto">
+                <img src="src/img/client_img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="big img" class="max-w-32 rounded-full relative lg:top-8">
+              </div>
+              <div class="mx-auto lg:hidden">
+                <img src="src/img/client_img/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg" alt="small img" class="max-w-20 rounded-full">
+              </div>
+            </div>
+            <!-- kalimat -->
+            <p class="text-xs lg:text-2xl text-secondary text-center mt-10 lg:mt-20">"The best agency in town. Mproperty was extremely responsive and<span class="block mt-1 lg:mt-3">had great suggesttions for homes to view based on what</span><span class="block mt-1 lg:mt-3">I was looking for"</span></p>
+            <div class="flex justify-center pt-7 lg:pt-14 pb-7">
+              <p class="text-xl lg:text-2xl font-semibold text-dark text-center">Alan Maulana<span class="block text-xs text-secondary">Jawa, Indonesia</span></p>
+            </div>
+          </div>
+
+          <div class="hidden lg:grid justify-items-stretch lg:w-[15%]">
+            <div class="w-fit">
+              <img src="src/img/client_img/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg" alt="small img" class="max-w-20 rounded-full">
+            </div>
+            <div class="flex w-fit justify-self-end">
+              <img src="src/img/client_img/prince-akachi-GqHeaHja5m0-unsplash.jpg" alt="small img" class="max-w-24 rounded-full self-center">
+            </div>
+            <div class="flex w-fit">
+              <img src="src/img/client_img/vince-fleming-j3lf-Jn6deo-unsplash.jpg" alt="small img" class="max-w-20 rounded-full self-end">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- customer testimonial end -->
+
+    <!-- subscribe start -->
+    <section id="subscribe" class="subscribe py-40">
+      <div class="container px-8">
+        <div class="flex flex-wrap bg-biru rounded-2xl pt-10 lg:mt-10">
+          <!-- side left -->
+          <div class="w-full px-4 lg:w-2/5">
+            <div class="mt-10 lg:mt-0">
+              <img src="src/img/hero_img/matthieu-d-oultremont-unsplash-property.png" alt="frame subscribe" class="max-w-full mx-auto pointer-events-none">
+            </div>
+          </div>
+          <!-- side right -->
+          <div class="w-full self-center px-10 lg:w-3/5 pt-7">
+            <h2 class="text-white font-semibold text-3xl md:text-4xl lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight">Get Started With Mproperty<br>For Latest Update</h2>
+            <!-- button -->
+            <div type="text" class="w-full xl:w-10/12 rounded-lg bg-white gap-2 mt-5 lg:mt-10">
+              <form class="relative p-3 flex w-full">
+                <input type="text" placeholder="Enter your email address" class="w-full font-semibold text-sm md:text-[18px] text-secondary py-2 lg:py-4 outline-none rounded-lg placeholder:opacity-50">
+                <button type="submit" class="absolute right-3 font-semibold text-sm md:text-[18px] text-white bg-biru py-2 px-5 lg:py-[1.05rem] lg:px-10 rounded-lg hover:bg-[#0595f5] ease-in-out duration-300 active:bg-opacity-50">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- subscribe end -->
+
+  </main>
+  <!-- main end -->
+
+  <!-- footer start -->
+  <footer class="bg-langit">
+    <div class="container">
+      <div class="w-full gap-y-12 grid sm:grid-cols-2 lg:grid-cols-5 sm:gap-x-4 sm:gap-y-12 lg:gap-4 px-4 py-10">
+        <div class="lg:col-span-2">
+          <a href="#home"><img src="src/img/logo/logo.png" alt="logo" class="w-10"></a>
+          <p class="text-base text-secondary mt-6">Mpropert Lorem ipsum dolor, sit amet consectetur adipisicing elit.Quo voluptas veniam consequuntur. Itaque, ipsum quas.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-base">Service</h4>
+          <div class="list grid grid-rows-4 gap-y-3 mt-6">
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">Help Center</a>
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">FAQ</a>
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">Transaction</a>
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">Features</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-base">Company</h4>
+          <div class="list grid grid-rows-4 gap-y-3 mt-6">
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">About Us</a>
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">Career</a>
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">Management</a>
+            <a href="#" class="text-base text-secondary hover:text-dark w-fit">Blog</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-base">Get Connected</h4>
+          <div class="list grid grid-rows-3 gap-y-3 mt-6">
+            <p class="text-base text-secondary">Mproperty.com</p>
+            <p class="text-base text-secondary">Jawa, Indonesia</p>
+            <div class="sosial-media flex gap-4 mt-3">
+              <i class="fa-brands fa-facebook-f fa-lg text-biru cursor-pointer hover:text-dark"></i>
+              <i class="fa-brands fa-x-twitter fa-lg text-biru cursor-pointer hover:text-dark"></i>
+              <i class="fa-brands fa-instagram fa-lg text-biru cursor-pointer hover:text-dark"></i>
+              <i class="fa-brands fa-youtube fa-lg text-biru cursor-pointer hover:text-dark"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="border-2">
+      <p class="text-base text-secondary text-center py-6">CopyRight&copy;2024 <span class="text-dark">Dana Maulana</span>. All Right Reserved.</p>
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>

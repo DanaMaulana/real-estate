@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* hamburger */
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark;
+}
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+/* fixed navbar */
+.navbar-fixed {
+  @apply fixed z-[999] bg-white bg-opacity-70 backdrop-blur-sm shadow-md;
+}
+/* active tabs menu */
+header li a.active::after {
+  content: '';
+  @apply absolute z-10 bottom-0 left-0 w-full h-1 bg-biru rounded-xl;
+}
+button.active::after {
+  content: '';
+  @apply absolute z-10 bottom-0 left-0 w-full h-1 bg-biru rounded-xl;
+}
+/* garis judul section */
+.judul-section.horizontal-line {
+  @apply relative pl-4;
+}
+.judul-section.horizontal-line h2::before {
+  @apply inline-block w-32;
+  content: "";
+  border-top: 2px solid #22a2f7;
+  margin: 0 1rem;
+  transform: translateY(-.5rem);
+}
